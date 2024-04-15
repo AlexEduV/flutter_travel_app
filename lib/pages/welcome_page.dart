@@ -21,7 +21,7 @@ class _WelcomePageState extends State<WelcomePage> {
             height: double.maxFinite,
             width: double.maxFinite,
 
-            
+
           );
         },
       ),

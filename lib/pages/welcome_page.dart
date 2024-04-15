@@ -44,9 +44,9 @@ class _WelcomePageState extends State<WelcomePage> {
                 //page info
                 Column(
                   children: [
-                    
+
                   ],
-                )
+                ),
 
                 //slider state
                 Column(

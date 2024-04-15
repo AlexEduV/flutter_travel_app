@@ -10,7 +10,7 @@ class AppLargeText extends StatelessWidget {
     super.key,
     this.textSize = 30,
     required this.text,
-    this.color = Colors.black,
+    this.color = Colors.black87,
   });
 
   @override
@@ -21,6 +21,7 @@ class AppLargeText extends StatelessWidget {
         fontSize: textSize,
         color: color,
         fontWeight: FontWeight.bold,
+        height: 0.9,
       ),
     );
   }

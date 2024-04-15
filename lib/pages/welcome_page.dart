@@ -17,6 +17,25 @@ class _WelcomePageState extends State<WelcomePage> {
     "assets/images/welcome-three.png",
   ];
 
+  List titles = [
+    "Trips",
+    "Discover",
+    "Discover"
+  ];
+
+  List subtitles = [
+    "Mountain",
+    "Lake",
+    "Lake",
+  ];
+
+  List texts = [
+    'Mountain hikes give you an incredible '
+        'sense of freedom along with endurance tests',
+    '',
+    '',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,19 +61,19 @@ class _WelcomePageState extends State<WelcomePage> {
 
             child: Container(
               margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
-              child: const Row(
+              child: Row(
                 children: [
 
                   //page info
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AppLargeText(text: "Trips"),
-                      AppText(text: "Mountain", textSize: 30,),
+                      AppLargeText(text: titles[index]),
+                      AppText(text: subtitles[index], textSize: 30,),
                       
-                      Container(
+                      SizedBox(
                         width: 250,
-                        child: AppText(text: text),
+                        child: AppText(text: texts[index]),
                       )
                     ],
                   ),

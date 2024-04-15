@@ -70,11 +70,22 @@ class _WelcomePageState extends State<WelcomePage> {
                     children: [
                       AppLargeText(text: titles[index]),
                       AppText(text: subtitles[index], textSize: 30,),
+
+                      const SizedBox(height: 15,),
                       
                       SizedBox(
                         width: 250,
                         child: AppText(text: texts[index]),
-                      )
+                      ),
+
+                      //'more' button
+                      // const IconButton(
+                      //     onPressed: null,
+                      //     icon: Icon(
+                      //       right
+                      //     )
+                      // ),
+
                     ],
                   ),
 

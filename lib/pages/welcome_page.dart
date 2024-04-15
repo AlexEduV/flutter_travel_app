@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_test/widgets/app_large_text.dart';
+import 'package:flutter_travel_test/widgets/app_text.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -38,23 +40,33 @@ class _WelcomePageState extends State<WelcomePage> {
               )
             ),
 
-            child: Row(
-              children: [
+            child: Container(
+              margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
+              child: const Row(
+                children: [
 
-                //page info
-                Column(
-                  children: [
+                  //page info
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AppLargeText(text: "Trips"),
+                      AppText(text: "Mountain", textSize: 30,),
+                      
+                      Container(
+                        width: 250,
+                        child: AppText(text: text),
+                      )
+                    ],
+                  ),
 
-                  ],
-                ),
+                  //slider state
+                  Column(
+                    children: [
 
-                //slider state
-                Column(
-                  children: [
-
-                  ],
-                )
-              ],
+                    ],
+                  )
+                ],
+              ),
             ),
 
 

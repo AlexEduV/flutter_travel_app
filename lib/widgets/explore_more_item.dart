@@ -24,7 +24,7 @@ class exploreMoreItem extends StatelessWidget {
           width: 60,
           decoration: BoxDecoration(
             color: Colors.grey.withOpacity(.5),
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(64.0),
             image:DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(

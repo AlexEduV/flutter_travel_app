@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 
@@ -49,10 +50,16 @@ class _HomeItemPageState extends State<HomeItemPage> {
 
             const SizedBox(height: 30,),
 
-            const DefaultTabController(
+            DefaultTabController(
               length: 3,
               child: TabBar(
-                tabs: [
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.grey.withOpacity(.5),
+                tabAlignment: TabAlignment.start,
+                labelPadding: const EdgeInsets.only(right: 20, left: 20),
+                dividerColor: Colors.transparent,
+                isScrollable: true,
+                tabs: const [
                   Tab(text: "Places",),
                   Tab(text: "Inspiration",),
                   Tab(text: "Emotions",),
@@ -60,7 +67,15 @@ class _HomeItemPageState extends State<HomeItemPage> {
               ),
             ),
 
-            //Container(),
+            Expanded(
+              child: PageView(
+                children: const [
+                  Text('Places'),
+                  Text('Inspiration'),
+                  Text('Emotions'),
+                ],
+              ),
+            ),
 
           ],
         ),

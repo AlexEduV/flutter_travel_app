@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 
@@ -18,7 +19,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 50,),
         color: Colors.white,
 
         child: Column(
@@ -26,57 +27,66 @@ class _HomeItemPageState extends State<HomeItemPage> {
           children: [
 
             //top bar
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                //menu icon
-                const Icon(Icons.menu, size: 30, color: Colors.black,),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  //menu icon
+                  const Icon(Icons.menu, size: 30, color: Colors.black,),
 
-                //profile image (placeholder)
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    image: const DecorationImage(
-                      image: AssetImage('assets/images/moon-profile.png'),
+                  //profile image (placeholder)
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/moon-profile.png'),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.indigo,
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.indigo,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
 
             const SizedBox(height: 40,),
 
             //discover text
-            const AppLargeText(text: 'Discover'),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const AppLargeText(text: 'Discover'),
+            ),
 
             const SizedBox(height: 30,),
 
-            DefaultTabController(
-              length: 3,
-              child: TabBar(
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.grey.withOpacity(.5),
-                tabAlignment: TabAlignment.start,
-                labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
-                dividerColor: Colors.transparent,
-                isScrollable: true,
-                indicator: const CircleTabIndicator(
-                  color: AppColors.mainColor,
-                  radius: 3.0,
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: DefaultTabController(
+                length: 3,
+                child: TabBar(
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey.withOpacity(.5),
+                  tabAlignment: TabAlignment.start,
+                  labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
+                  dividerColor: Colors.transparent,
+                  isScrollable: true,
+                  indicator: const CircleTabIndicator(
+                    color: AppColors.mainColor,
+                    radius: 3.0,
+                  ),
+                  onTap: (index) {
+                   setState(() {
+                     selectedTabPageIndex = index;
+                   });
+                  },
+                  tabs: const [
+                    Tab(text: "Places",),
+                    Tab(text: "Inspiration",),
+                    Tab(text: "Emotions",),
+                  ],
                 ),
-                onTap: (index) {
-                 setState(() {
-                   selectedTabPageIndex = index;
-                 });
-                },
-                tabs: const [
-                  Tab(text: "Places",),
-                  Tab(text: "Inspiration",),
-                  Tab(text: "Emotions",),
-                ],
               ),
             ),
 

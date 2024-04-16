@@ -106,13 +106,43 @@ class _HomeItemPageState extends State<HomeItemPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //explore more text
-                  AppLargeText(text: "Explore More", textSize: 20,),
+                  AppLargeText(text: "Explore More", textSize: 18,),
 
                   //see all button
                   AppText(text: "See All", color: AppColors.mainColor,),
                 ],
               ),
             ),
+
+            //
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.only(left: 20),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+
+                    return Column(
+                      children: [
+                        Container(
+                          height: 60,
+                          width: 60,
+                          margin: const EdgeInsets.only(right: 10.0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(.5),
+                            borderRadius: BorderRadius.circular(16.0),
+
+                          ),
+                        )
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ),
+
+
 
           ],
         ),

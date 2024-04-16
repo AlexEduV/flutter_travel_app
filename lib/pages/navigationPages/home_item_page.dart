@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
+import 'package:flutter_travel_test/widgets/app_text.dart';
 
 class HomeItemPage extends StatefulWidget {
   const HomeItemPage({super.key});
@@ -61,6 +62,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
 
             const SizedBox(height: 30,),
 
+            //tab bar
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: DefaultTabController(
@@ -90,10 +92,26 @@ class _HomeItemPageState extends State<HomeItemPage> {
               ),
             ),
 
+            //images carousel
             SizedBox(
               height: 300,
               width: double.maxFinite,
               child: getTabPageByIndex(selectedTabPageIndex),
+            ),
+
+            //Explore More section
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  //explore more text
+                  AppLargeText(text: "Explore More", textSize: 20,),
+
+                  //see all button
+                  AppText(text: "See All", color: AppColors.mainColor,),
+                ],
+              ),
             ),
 
           ],
@@ -110,13 +128,13 @@ class _HomeItemPageState extends State<HomeItemPage> {
       return ListView.builder(
         itemCount: 3,
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
         itemBuilder: (BuildContext context, int index) {
 
           return Container(
             height: 300,
             width: 200,
-            margin: const EdgeInsets.only(top: 15.0, right: 10.0),
+            margin: const EdgeInsets.only(right: 10.0,),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.white,

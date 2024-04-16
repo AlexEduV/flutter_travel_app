@@ -30,7 +30,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                       image: AssetImage('assets/images/moon-profile.png'),
                     ),
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey.withOpacity(.5),
+                    color: Colors.indigo,
                   ),
                 ),
 

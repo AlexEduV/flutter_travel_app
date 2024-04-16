@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 
 class HomeItemPage extends StatefulWidget {
@@ -10,6 +11,9 @@ class HomeItemPage extends StatefulWidget {
 }
 
 class _HomeItemPageState extends State<HomeItemPage> {
+
+  int selectedTabPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +63,15 @@ class _HomeItemPageState extends State<HomeItemPage> {
                 labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
                 dividerColor: Colors.transparent,
                 isScrollable: true,
+                indicator: const CircleTabIndicator(
+                  color: AppColors.mainColor,
+                  radius: 4.0,
+                ),
+                onTap: (index) {
+                 setState(() {
+                   selectedTabPageIndex = index;
+                 });
+                },
                 tabs: const [
                   Tab(text: "Places",),
                   Tab(text: "Inspiration",),
@@ -68,13 +81,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
             ),
 
             Expanded(
-              child: PageView(
-                children: const [
-                  Text('Places'),
-                  Text('Inspiration'),
-                  Text('Emotions'),
-                ],
-              ),
+              child: getTabPageByIndex(selectedTabPageIndex),
             ),
 
           ],
@@ -82,5 +89,53 @@ class _HomeItemPageState extends State<HomeItemPage> {
       ),
     );
   }
+
+  Widget getTabPageByIndex(int index)
+  {
+    if (index == 0) {
+      return const Text('Places');
+    }
+    else if (index == 1) {
+      return const Text('Inspiration');
+    }
+    else if (index == 2) {
+      return const Text('Emotions');
+    }
+
+    return Container();
+  }
+}
+
+class CircleTabIndicator extends Decoration {
+
+  final Color color;
+  final double radius;
+
+  const CircleTabIndicator({required this.color, required this.radius});
+
+  @override
+  BoxPainter createBoxPainter([VoidCallback? onChanged]) {
+    return _CirclePainter(color: color, radius: radius);
+  }
+  
+}
+
+class _CirclePainter extends BoxPainter {
+
+  final Color color;
+  final double radius;
+
+  const _CirclePainter({required this.color, required this.radius});
+  
+  @override
+  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
+
+    Paint paint = Paint();
+    paint.color = color;
+    paint.isAntiAlias = true;
+
+    canvas.drawCircle(offset, radius, paint);
+  }
+  
 }
 

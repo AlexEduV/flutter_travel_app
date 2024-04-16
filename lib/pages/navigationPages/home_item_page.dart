@@ -56,7 +56,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                 labelColor: Colors.black,
                 unselectedLabelColor: Colors.grey.withOpacity(.5),
                 tabAlignment: TabAlignment.start,
-                labelPadding: const EdgeInsets.only(right: 20, left: 20),
+                labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
                 dividerColor: Colors.transparent,
                 isScrollable: true,
                 tabs: const [

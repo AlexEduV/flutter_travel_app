@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
 import 'package:flutter_travel_test/widgets/responsive_button.dart';
@@ -63,6 +64,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child: Container(
               margin: const EdgeInsets.only(top: 120, left: 20, right: 20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
 
                   //page info
@@ -87,11 +89,20 @@ class _WelcomePageState extends State<WelcomePage> {
                     ],
                   ),
 
-                  //slider state
+                  //custom slider
                   Column(
-                    children: [
-
-                    ],
+                    children: List.generate(3, (sliderIndex) {
+                      return Container(
+                        margin: const EdgeInsets.only(bottom: 2),
+                        width: 8,
+                        height: index == sliderIndex ? 25 : 8,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          color: index == sliderIndex ? AppColors.mainColor
+                              : AppColors.mainColor.withOpacity(.3),
+                        ),
+                      );
+                    }),
                   )
                 ],
               ),

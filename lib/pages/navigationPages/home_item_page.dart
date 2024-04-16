@@ -80,7 +80,9 @@ class _HomeItemPageState extends State<HomeItemPage> {
               ),
             ),
 
-            Expanded(
+            SizedBox(
+              height: 300,
+              width: double.maxFinite,
               child: getTabPageByIndex(selectedTabPageIndex),
             ),
 
@@ -92,8 +94,31 @@ class _HomeItemPageState extends State<HomeItemPage> {
 
   Widget getTabPageByIndex(int index)
   {
+
     if (index == 0) {
-      return const Text('Places');
+
+      return ListView.builder(
+        itemCount: 3,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index) {
+
+          return Container(
+            height: 300,
+            width: 200,
+            margin: const EdgeInsets.only(top: 15.0, left: 10.0),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+                image: const DecorationImage(
+                  image: AssetImage(
+                    "assets/images/mountain.jpeg",
+                  ),
+                  fit: BoxFit.cover,
+                )
+            ),
+          );
+        },
+      );
     }
     else if (index == 1) {
       return const Text('Inspiration');

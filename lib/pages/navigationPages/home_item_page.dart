@@ -125,7 +125,14 @@ class _HomeItemPageState extends State<HomeItemPage> {
                   itemCount: 4,
                   itemBuilder: (context, index) {
 
-                    return exploreMoreItem();
+                    return const Padding(
+                      padding: EdgeInsets.only(right: 12.0),
+                      child: exploreMoreItem(
+                        imageSource: '',
+                        tintColor: Colors.black,
+                        label: 'Item',
+                      ),
+                    );
                   },
                 ),
               ),

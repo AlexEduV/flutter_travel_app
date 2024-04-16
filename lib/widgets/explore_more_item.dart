@@ -1,22 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_test/styles/colors.dart';
+import 'package:flutter_travel_test/widgets/app_text.dart';
 
 class exploreMoreItem extends StatelessWidget {
-  const exploreMoreItem({super.key});
+
+  final String imageSource;
+  final Color tintColor;
+  final String label;
+
+  const exploreMoreItem({
+    super.key,
+    required this.imageSource,
+    required this.tintColor,
+    required this.label,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+
+        //image rounded tinted
         Container(
           height: 60,
           width: 60,
-          margin: const EdgeInsets.only(right: 10.0),
           decoration: BoxDecoration(
             color: Colors.grey.withOpacity(.5),
-            borderRadius: BorderRadius.circular(16.0),
-
+            borderRadius: BorderRadius.circular(20.0),
           ),
-        )
+        ),
+
+        //text
+        AppText(
+          text: label,
+          color: AppColors.textColor2,
+        ),
+
       ],
     );
   }

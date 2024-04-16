@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
+import 'package:flutter_travel_test/widgets/carousel_item.dart';
+import 'package:flutter_travel_test/widgets/explore_more_item.dart';
 
 class HomeItemPage extends StatefulWidget {
   const HomeItemPage({super.key});
@@ -123,20 +125,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                   itemCount: 4,
                   itemBuilder: (context, index) {
 
-                    return Column(
-                      children: [
-                        Container(
-                          height: 60,
-                          width: 60,
-                          margin: const EdgeInsets.only(right: 10.0),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(.5),
-                            borderRadius: BorderRadius.circular(16.0),
-
-                          ),
-                        )
-                      ],
-                    );
+                    return exploreMoreItem();
                   },
                 ),
               ),
@@ -160,22 +149,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
         itemBuilder: (BuildContext context, int index) {
-
-          return Container(
-            height: 300,
-            width: 200,
-            margin: const EdgeInsets.only(right: 10.0,),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-                image: const DecorationImage(
-                  image: AssetImage(
-                    "assets/images/mountain.jpeg",
-                  ),
-                  fit: BoxFit.cover,
-                )
-            ),
-          );
+          return const CarouselItem(imageSource: "assets/images/mountain.jpeg",);
         },
       );
     }

@@ -22,7 +22,7 @@ class _MainPageState extends State<MainPage> {
 
   int _selectedIndex = 0;
 
-  void onBottomNavigationitemTap(int index) {
+  void onBottomNavigationItemTap(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -31,15 +31,20 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: bottomNavigationPages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onBottomNavigationitemTap,
-        currentIndex: _selectedIndex,
+        unselectedFontSize: 0,
+        selectedFontSize: 0,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey.withOpacity(.5),
         showSelectedLabels: false,
         showUnselectedLabels: false,
         elevation: 0,
+        onTap: onBottomNavigationItemTap,
+        currentIndex: _selectedIndex,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.apps),

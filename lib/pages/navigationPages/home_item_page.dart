@@ -13,7 +13,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
         color: Colors.white,
 
         child: Column(

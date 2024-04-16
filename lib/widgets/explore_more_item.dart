@@ -5,13 +5,11 @@ import 'package:flutter_travel_test/widgets/app_text.dart';
 class exploreMoreItem extends StatelessWidget {
 
   final String imageSource;
-  final Color tintColor;
   final String label;
 
   const exploreMoreItem({
     super.key,
     required this.imageSource,
-    required this.tintColor,
     required this.label,
   });
 
@@ -27,13 +25,23 @@ class exploreMoreItem extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.grey.withOpacity(.5),
             borderRadius: BorderRadius.circular(20.0),
+            image:DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(
+                imageSource,
+              ),
+            ),
           ),
         ),
 
         //text
-        AppText(
-          text: label,
-          color: AppColors.textColor2,
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: AppText(
+            text: label,
+            textSize: 12,
+            color: AppColors.textColor2,
+          ),
         ),
 
       ],

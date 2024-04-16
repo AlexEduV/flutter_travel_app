@@ -17,6 +17,12 @@ class HomeItemPage extends StatefulWidget {
 class _HomeItemPageState extends State<HomeItemPage> {
 
   int selectedTabPageIndex = 0;
+  final exploreMoreItemsImages = {
+    "ballooning.png": "Ballooning",
+    "hiking.png": "Hiking",
+    "kayaking.png" : "Kayaking",
+    "snorkeling.png" : "Snorkeling",
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -125,12 +131,11 @@ class _HomeItemPageState extends State<HomeItemPage> {
                   itemCount: 4,
                   itemBuilder: (context, index) {
 
-                    return const Padding(
-                      padding: EdgeInsets.only(right: 12.0),
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 20.0),
                       child: exploreMoreItem(
-                        imageSource: '',
-                        tintColor: Colors.black,
-                        label: 'Item',
+                        imageSource: 'assets/images/${exploreMoreItemsImages.keys.elementAt(index)}',
+                        label: exploreMoreItemsImages.values.elementAt(index),
                       ),
                     );
                   },

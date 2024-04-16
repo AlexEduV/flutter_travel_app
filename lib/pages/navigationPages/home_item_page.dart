@@ -110,12 +110,13 @@ class _HomeItemPageState extends State<HomeItemPage> {
       return ListView.builder(
         itemCount: 3,
         scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.only(left: 20),
         itemBuilder: (BuildContext context, int index) {
 
           return Container(
             height: 300,
             width: 200,
-            margin: const EdgeInsets.only(top: 15.0, left: 10.0),
+            margin: const EdgeInsets.only(top: 15.0, right: 10.0),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.white,

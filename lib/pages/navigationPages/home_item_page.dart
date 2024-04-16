@@ -65,7 +65,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                 isScrollable: true,
                 indicator: const CircleTabIndicator(
                   color: AppColors.mainColor,
-                  radius: 4.0,
+                  radius: 3.0,
                 ),
                 onTap: (index) {
                  setState(() {
@@ -133,8 +133,11 @@ class _CirclePainter extends BoxPainter {
     Paint paint = Paint();
     paint.color = color;
     paint.isAntiAlias = true;
+    final Offset circleOffset = Offset(
+        configuration.size!.width / 2 - radius / 2,
+        configuration.size!.height - (radius * 2));
 
-    canvas.drawCircle(offset, radius, paint);
+    canvas.drawCircle(offset + circleOffset, radius, paint);
   }
   
 }

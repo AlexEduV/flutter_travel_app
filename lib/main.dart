@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_test/pages/navigationPages/main_page.dart';
 import 'package:flutter_travel_test/pages/welcome_page.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WelcomePage(),
+      home: const MainPage(),
       debugShowCheckedModeBanner: false,
     );
   }

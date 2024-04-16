@@ -60,7 +60,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
               ),
             ),
 
-            const SizedBox(height: 40,),
+            const SizedBox(height: 30,),
 
             //discover text
             Container(
@@ -68,7 +68,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
               child: const AppLargeText(text: 'Discover'),
             ),
 
-            const SizedBox(height: 30,),
+            const SizedBox(height: 20,),
 
             //tab bar
             Container(

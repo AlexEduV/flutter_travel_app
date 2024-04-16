@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
+import 'package:flutter_travel_test/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -60,7 +61,7 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
 
             child: Container(
-              margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
+              margin: const EdgeInsets.only(top: 120, left: 20, right: 20),
               child: Row(
                 children: [
 
@@ -78,13 +79,10 @@ class _WelcomePageState extends State<WelcomePage> {
                         child: AppText(text: texts[index]),
                       ),
 
+                      const SizedBox(height: 30,),
+
                       //'more' button
-                      // const IconButton(
-                      //     onPressed: null,
-                      //     icon: Icon(
-                      //       right
-                      //     )
-                      // ),
+                      const ResponsiveButton(width: 120,)
 
                     ],
                   ),

@@ -17,6 +17,20 @@ class _DetailPageState extends State<DetailPage> {
         child: Stack(
           children: [
 
+            //background image
+            Positioned(
+                child: Container(
+                  height: 350,
+                  width: double.maxFinite,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/mountain.jpeg"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                )
+            ),
+
             //top bar
             Positioned(
               left: 20,
@@ -30,7 +44,7 @@ class _DetailPageState extends State<DetailPage> {
                     onPressed: (){},
                     icon: const Icon(
                       Icons.menu,
-                      //color: Colors.white,
+                      color: Colors.white,
                     ),
                   ),
 
@@ -39,7 +53,7 @@ class _DetailPageState extends State<DetailPage> {
                     onPressed: (){},
                     icon: const Icon(
                       Icons.more_vert,
-                      //color: Colors.white,
+                      color: Colors.white,
                     ),
                   ),
 
@@ -47,7 +61,22 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
 
-            
+            //details
+            Positioned(
+              top: 320,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 500,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30.0),
+                    topRight: Radius.circular(30.0),
+                  ),
+                  color: Colors.white,
+                ),
+                //child: ,
+              ),
+            )
 
           ],
         ),

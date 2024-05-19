@@ -74,7 +74,11 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                   color: Colors.white,
                 ),
-                //child: ,
+                child: Column(
+                  children: [
+
+                  ],
+                ),
               ),
             )
 

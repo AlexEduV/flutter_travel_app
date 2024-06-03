@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_test/styles/colors.dart';
+import 'package:flutter_travel_test/widgets/app_large_text.dart';
+import 'package:gap/gap.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -67,6 +70,7 @@ class _DetailPageState extends State<DetailPage> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 500,
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30.0),
@@ -74,9 +78,27 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                   color: Colors.white,
                 ),
-                child: Column(
+                child: const Column(
                   children: [
 
+                    Gap(20.0),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        AppLargeText(text: 'Yosemite', color: Colors.black87,),
+                        AppLargeText(text: '\$ 250', color: AppColors.mainColor,),
+                      ],
+                    ),
+
+                   Gap(10.0),
+
+                    Row(
+                      children: [
+                        
+                      ],
+                    )
+                    
                   ],
                 ),
               ),

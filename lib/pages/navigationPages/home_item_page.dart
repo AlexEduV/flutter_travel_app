@@ -180,8 +180,13 @@ class _HomeItemPageState extends State<HomeItemPage> {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
         itemBuilder: (BuildContext context, int index) {
-          return CarouselItem(
-            imageSource: "http://mark.bslmeiyu.com/uploads/${data[index].imgSource}",
+          return GestureDetector(
+            onTap: () {
+              BlocProvider.of<AppCubits>(context).showDetails(data[index]);
+            },
+            child: CarouselItem(
+              imageSource: "http://mark.bslmeiyu.com/uploads/${data[index].imgSource}",
+            ),
           );
         },
       );

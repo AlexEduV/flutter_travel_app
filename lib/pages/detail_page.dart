@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
+import 'package:flutter_travel_test/widgets/app_text.dart';
 import 'package:gap/gap.dart';
 
 class DetailPage extends StatefulWidget {
@@ -11,8 +12,12 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+
+  final int stars = 3;
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         width: double.maxFinite,
@@ -78,26 +83,88 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                   color: Colors.white,
                 ),
-                child: const Column(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-                    Gap(20.0),
+                    const Gap(30.0),
 
-                    Row(
+                    //name and price
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        AppLargeText(text: 'Yosemite', color: Colors.black87,),
-                        AppLargeText(text: '\$ 250', color: AppColors.mainColor,),
+                        AppLargeText(
+                          text: 'Yosemite',
+                          color: Colors.black87,
+                          textSize: 28,
+                        ),
+
+                        AppLargeText(
+                          text: '\$ 250',
+                          color: AppColors.mainColor,
+                          textSize: 28,
+                        ),
                       ],
                     ),
 
-                   Gap(10.0),
+                   const Gap(10.0),
 
+                    //location (icon and text)
+                    const Row(
+                      children: [
+                        Icon(Icons.location_pin, color: AppColors.mainColor,),
+
+                        Gap(5.0),
+
+                        AppText(
+                          text: 'USA, California',
+                          color: AppColors.mainColor,
+                          textSize: 15.0,
+                        ),
+                      ],
+                    ),
+
+                    const Gap(10.0),
+
+                    //stars
                     Row(
                       children: [
-                        
+                        Wrap(
+                          children:
+                            List.generate(5, (index) {
+                              return Icon(
+                                index < stars ? Icons.star: Icons.star_border,
+                                color: index < stars ? AppColors.starColor : AppColors.textColor1,
+                              );
+                            })
+                        ),
+
+                        const Gap(10.0),
+
+                        AppText(
+                          text: '($stars.0)',
+                          color: AppColors.textColor2,
+                        ),
                       ],
-                    )
+                    ),
+
+                    const Gap(40.0),
+
+                    const AppLargeText(
+                      text: 'People',
+                      color: Colors.black87,
+                      textSize: 20,
+                    ),
+
+                    const Gap(10.0),
+
+                    const AppText(
+                      text: 'Number of people in your group',
+                      color: AppColors.mainTextColor,
+                    ),
+
+                    
+
                     
                   ],
                 ),

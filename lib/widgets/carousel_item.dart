@@ -18,9 +18,7 @@ class CarouselItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           color: Colors.white,
           image: DecorationImage(
-            image: AssetImage(
-              imageSource
-            ),
+            image: NetworkImage(imageSource),
             fit: BoxFit.cover,
           )
       ),

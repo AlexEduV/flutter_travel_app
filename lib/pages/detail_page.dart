@@ -137,7 +137,7 @@ class _DetailPageState extends State<DetailPage> {
                             List.generate(5, (index) {
                               return Icon(
                                 index < stars ? Icons.star: Icons.star_border,
-                                color: index < stars ? AppColors.starColor : AppColors.textColor1,
+                                color: index < stars ? AppColors.starColor : AppColors.textColor2,
                               );
                             })
                         ),
@@ -166,7 +166,7 @@ class _DetailPageState extends State<DetailPage> {
                       color: AppColors.mainTextColor,
                     ),
 
-                    const Gap(5.0),
+                    const Gap(10.0),
 
                     Wrap(
                       spacing: 8.0,

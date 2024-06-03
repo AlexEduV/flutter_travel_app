@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_button.dart';
@@ -90,7 +91,7 @@ class _DetailPageState extends State<DetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-                    const Gap(30.0),
+                    const Gap(25.0),
 
                     //name and price
                     const Row(
@@ -151,7 +152,7 @@ class _DetailPageState extends State<DetailPage> {
                       ],
                     ),
 
-                    const Gap(40.0),
+                    const Gap(35.0),
 
                     const AppLargeText(
                       text: 'People',
@@ -190,7 +191,7 @@ class _DetailPageState extends State<DetailPage> {
                       }),
                     ),
 
-                    const Gap(40.0),
+                    const Gap(35.0),
 
                     const AppLargeText(text: 'Description', fontSize: 20,),
 
@@ -201,7 +202,21 @@ class _DetailPageState extends State<DetailPage> {
                       color: AppColors.mainTextColor,
                     ),
 
-                    
+                    const Gap(20.0),
+
+                    const Row(
+                      children: [
+
+                        AppButton(
+                          backgroundColor: AppColors.buttonBackgroundColor,
+                          color: Colors.black87,
+                          borderColor: Colors.black87,
+                          icon: CupertinoIcons.heart,
+                        ),
+
+
+                      ],
+                    )
 
                   ],
                 ),

@@ -91,10 +91,9 @@ class _DetailPageState extends State<DetailPage> {
 
                   //details
                   Positioned(
-                    top: 320,
+                    top: 300,
                     child: Container(
                       width: MediaQuery.of(context).size.width,
-                      height: 500,
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(

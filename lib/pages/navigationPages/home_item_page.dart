@@ -54,7 +54,12 @@ class _HomeItemPageState extends State<HomeItemPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         //menu icon
-                        const Icon(Icons.menu, size: 30, color: Colors.black,),
+                        IconButton(
+                          icon: const Icon(Icons.chevron_left, size: 30, color: Colors.black,),
+                          onPressed: () {
+                            BlocProvider.of<AppCubits>(context).goToWelcomePage();
+                          },
+                        ),
 
                         //profile image (placeholder)
                         Container(

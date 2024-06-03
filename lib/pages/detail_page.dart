@@ -9,8 +9,8 @@ import 'package:flutter_travel_test/widgets/app_text.dart';
 import 'package:flutter_travel_test/widgets/responsive_button.dart';
 import 'package:gap/gap.dart';
 
-import '../cubit/app_cubit_states.dart';
-import '../model/data_model.dart';
+import 'package:flutter_travel_test/cubit/app_cubit_states.dart';
+import 'package:flutter_travel_test/model/data_model.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -23,13 +23,16 @@ class _DetailPageState extends State<DetailPage> {
 
   late int selectedPeopleIndex = -1;
 
+  void onBackPressed() {
+    BlocProvider.of<AppCubits>(context).goHome();
+  }
+
   @override
   Widget build(BuildContext context) {
 
     return PopScope(
-      onPopInvoked: (bool isInvoked) {
-        BlocProvider.of<AppCubits>(context).goHome();
-      },
+      onPopInvoked: (bool isInvoked) => onBackPressed,
+      canPop: false,
       child: BlocBuilder<AppCubits, CubitStates>(
         builder: (context, state) {
 
@@ -65,11 +68,9 @@ class _DetailPageState extends State<DetailPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        //menu button
+                        //back button
                         IconButton(
-                          onPressed: (){
-                            BlocProvider.of<AppCubits>(context).goHome();
-                          },
+                          onPressed: () => onBackPressed,
                           icon: const Icon(
                             Icons.chevron_left,
                             color: Colors.white,

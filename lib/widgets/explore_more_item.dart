@@ -39,7 +39,7 @@ class exploreMoreItem extends StatelessWidget {
           padding: const EdgeInsets.only(top: 10),
           child: AppText(
             text: label,
-            textSize: 12,
+            fontSize: 12,
             color: AppColors.textColor2,
           ),
         ),

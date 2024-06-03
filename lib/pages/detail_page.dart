@@ -120,7 +120,7 @@ class _DetailPageState extends State<DetailPage> {
                         AppText(
                           text: 'USA, California',
                           color: AppColors.mainColor,
-                          textSize: 15.0,
+                          fontSize: 14.0,
                         ),
                       ],
                     ),
@@ -171,9 +171,10 @@ class _DetailPageState extends State<DetailPage> {
                       children: List.generate(5, (index) {
 
                         return AppButton(
-                          backgroundColor: AppColors.buttonBackgroundColor,
                           text: '${index + 1}',
+                          backgroundColor: AppColors.buttonBackgroundColor,
                           color: Colors.black87,
+                          borderColor: AppColors.buttonBackgroundColor,
                           size: 55,
                         );
 

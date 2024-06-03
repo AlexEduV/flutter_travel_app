@@ -5,13 +5,15 @@ class AppButton extends StatelessWidget {
 
   final Color color;
   final Color backgroundColor;
-  final Icon? icon;
+  final IconData? icon;
   final String? text;
   final double size;
+  final Color borderColor;
 
   const AppButton({
     required this.backgroundColor,
     required this.color,
+    required this.borderColor,
     this.size=60,
     this.text,
     this.icon,
@@ -25,12 +27,18 @@ class AppButton extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
+        border: Border.all(
+          color: borderColor,
+        ),
         color: backgroundColor,
       ),
       child: Center(
-        child: AppLargeText(
+        child: text != null ? AppLargeText(
           text: text ?? '',
           fontSize: 20,
+          color: color,
+        ) : Icon(
+          icon,
           color: color,
         ),
       ),

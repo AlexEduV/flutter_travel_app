@@ -72,7 +72,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AppLargeText(text: titles[index]),
-                      AppText(text: subtitles[index], textSize: 30,),
+                      AppText(text: subtitles[index], fontSize: 30,),
 
                       const SizedBox(height: 15,),
                       

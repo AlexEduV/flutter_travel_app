@@ -4,6 +4,7 @@ import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_button.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
+import 'package:flutter_travel_test/widgets/responsive_button.dart';
 import 'package:gap/gap.dart';
 
 class DetailPage extends StatefulWidget {
@@ -214,6 +215,14 @@ class _DetailPageState extends State<DetailPage> {
                           icon: CupertinoIcons.heart,
                         ),
 
+                        Gap(10.0),
+
+                        Expanded(
+                          child: ResponsiveButton(
+                            isResponsive: true,
+                            text: 'Book Trip Now',
+                          ),
+                        ),
 
                       ],
                     )

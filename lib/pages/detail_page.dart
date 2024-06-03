@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_test/styles/colors.dart';
+import 'package:flutter_travel_test/widgets/app_button.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
 import 'package:gap/gap.dart';
@@ -96,13 +97,13 @@ class _DetailPageState extends State<DetailPage> {
                         AppLargeText(
                           text: 'Yosemite',
                           color: Colors.black87,
-                          textSize: 28,
+                          fontSize: 28,
                         ),
 
                         AppLargeText(
                           text: '\$ 250',
                           color: AppColors.mainColor,
-                          textSize: 28,
+                          fontSize: 28,
                         ),
                       ],
                     ),
@@ -153,17 +154,31 @@ class _DetailPageState extends State<DetailPage> {
                     const AppLargeText(
                       text: 'People',
                       color: Colors.black87,
-                      textSize: 20,
+                      fontSize: 20,
                     ),
 
-                    const Gap(10.0),
+                    const Gap(5.0),
 
                     const AppText(
                       text: 'Number of people in your group',
                       color: AppColors.mainTextColor,
                     ),
 
-                    
+                    const Gap(5.0),
+
+                    Wrap(
+                      spacing: 8.0,
+                      children: List.generate(5, (index) {
+
+                        return AppButton(
+                          backgroundColor: AppColors.buttonBackgroundColor,
+                          text: '${index + 1}',
+                          color: Colors.black87,
+                          size: 55,
+                        );
+
+                      }),
+                    )
 
                     
                   ],

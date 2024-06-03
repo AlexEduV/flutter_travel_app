@@ -114,7 +114,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //explore more text
-                  AppLargeText(text: "Explore More", textSize: 18,),
+                  AppLargeText(text: "Explore More", fontSize: 18,),
 
                   //see all button
                   AppText(text: "See All", color: AppColors.mainColor,),

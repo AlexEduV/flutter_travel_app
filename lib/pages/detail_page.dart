@@ -209,7 +209,7 @@ class _DetailPageState extends State<DetailPage> {
                       children: [
 
                         AppButton(
-                          backgroundColor: AppColors.buttonBackgroundColor,
+                          backgroundColor: Colors.white,
                           color: Colors.black87,
                           borderColor: Colors.black87,
                           icon: CupertinoIcons.heart,
@@ -219,7 +219,6 @@ class _DetailPageState extends State<DetailPage> {
 
                         Expanded(
                           child: ResponsiveButton(
-                            isResponsive: true,
                             text: 'Book Trip Now',
                           ),
                         ),

@@ -22,7 +22,7 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.maxFinite,
         height: double.maxFinite,
         child: Stack(
@@ -188,9 +188,21 @@ class _DetailPageState extends State<DetailPage> {
                         );
 
                       }),
-                    )
+                    ),
+
+                    const Gap(40.0),
+
+                    const AppLargeText(text: 'Description', fontSize: 20,),
+
+                    const Gap(5.0),
+                    
+                    const AppText(
+                      text: 'Yosemite National Park is located in central Sierra Nevada in the US state of California. It is located near the wild protected areas.',
+                      color: AppColors.mainTextColor,
+                    ),
 
                     
+
                   ],
                 ),
               ),

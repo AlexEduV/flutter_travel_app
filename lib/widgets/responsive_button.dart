@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
-import 'package:flutter_travel_test/widgets/app_text.dart';
-import 'package:gap/gap.dart';
 
 class ResponsiveButton extends StatelessWidget {
 
@@ -22,7 +20,7 @@ class ResponsiveButton extends StatelessWidget {
     return Container(
       height: 60,
       width: width,
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: text != null ? const EdgeInsets.symmetric(horizontal: 20.0) : null,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: AppColors.mainColor,

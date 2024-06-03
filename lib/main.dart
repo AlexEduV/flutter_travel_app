@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_travel_test/cubit/app_cubit_logics.dart';
+import 'package:flutter_travel_test/cubit/app_cubits.dart';
 import 'package:flutter_travel_test/pages/detail_page.dart';
 import 'package:flutter_travel_test/pages/main_page.dart';
 import 'package:flutter_travel_test/pages/welcome_page.dart';
@@ -18,7 +21,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const DetailPage(),
+      home: BlocProvider<AppCubits>(
+        create: (context) => AppCubits(),
+        child: const AppCubitLogics(),
+      ),
       debugShowCheckedModeBanner: false,
     );
   }

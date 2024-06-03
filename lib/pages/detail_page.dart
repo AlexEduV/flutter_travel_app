@@ -16,6 +16,8 @@ class _DetailPageState extends State<DetailPage> {
 
   final int stars = 3;
 
+  late int selectedPeopleIndex = -1;
+
   @override
   Widget build(BuildContext context) {
 
@@ -170,12 +172,19 @@ class _DetailPageState extends State<DetailPage> {
                       spacing: 8.0,
                       children: List.generate(5, (index) {
 
-                        return AppButton(
-                          text: '${index + 1}',
-                          backgroundColor: AppColors.buttonBackgroundColor,
-                          color: Colors.black87,
-                          borderColor: AppColors.buttonBackgroundColor,
-                          size: 55,
+                        return InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedPeopleIndex = index;
+                            });
+                          },
+                          child: AppButton(
+                            text: '${index + 1}',
+                            backgroundColor: index == selectedPeopleIndex ? Colors.black87 : AppColors.buttonBackgroundColor,
+                            color: index == selectedPeopleIndex ? AppColors.buttonBackgroundColor : Colors.black87,
+                            borderColor: index == selectedPeopleIndex ? Colors.black87 : AppColors.buttonBackgroundColor,
+                            size: 55,
+                          ),
                         );
 
                       }),

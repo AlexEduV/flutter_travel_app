@@ -24,7 +24,7 @@ class _DetailPageState extends State<DetailPage> {
   late int selectedPeopleIndex = -1;
 
   void onBackPressed() {
-    BlocProvider.of<AppCubits>(context).goHome();
+    context.read<AppCubits>().goHome();
   }
 
   @override

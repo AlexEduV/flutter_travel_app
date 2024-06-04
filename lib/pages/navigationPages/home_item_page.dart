@@ -30,7 +30,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
   };
 
   void onBackPressed() {
-    BlocProvider.of<AppCubits>(context).goToWelcomePage();
+    context.read<AppCubits>().goToWelcomePage();
   }
 
   @override
@@ -193,7 +193,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              BlocProvider.of<AppCubits>(context).showDetails(data[index]);
+              context.read<AppCubits>().showDetails(data[index]);
             },
             child: CarouselItem(
               imageSource: "http://mark.bslmeiyu.com/uploads/${data[index].imgSource}",

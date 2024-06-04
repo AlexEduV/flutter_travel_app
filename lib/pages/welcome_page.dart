@@ -88,7 +88,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       //'more' button
                       GestureDetector(
                         onTap: () {
-                          BlocProvider.of<AppCubits>(context).getData();
+                          context.read<AppCubits>().getData();
                         },
                         child: const SizedBox(
                           width: 200,

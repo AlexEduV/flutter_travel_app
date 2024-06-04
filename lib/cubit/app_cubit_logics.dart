@@ -4,7 +4,6 @@ import 'package:flutter_travel_test/cubit/app_cubit_states.dart';
 import 'package:flutter_travel_test/cubit/app_cubits.dart';
 import 'package:flutter_travel_test/pages/detail_page.dart';
 import 'package:flutter_travel_test/pages/main_page.dart';
-import 'package:flutter_travel_test/pages/navigationPages/home_item_page.dart';
 import 'package:flutter_travel_test/pages/welcome_page.dart';
 
 class AppCubitLogics extends StatefulWidget {

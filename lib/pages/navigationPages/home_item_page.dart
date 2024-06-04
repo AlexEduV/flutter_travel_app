@@ -37,6 +37,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
       onPopInvoked: (bool isInvoked) {
         onBackPressed();
       },
+      canPop: false,
       child: Scaffold(
         body: BlocBuilder<AppCubits, CubitStates>(
           builder: (context, state) {

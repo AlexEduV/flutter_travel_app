@@ -31,7 +31,9 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
 
     return PopScope(
-      onPopInvoked: (bool isInvoked) => onBackPressed,
+      onPopInvoked: (bool isInvoked) {
+        onBackPressed();
+      },
       canPop: false,
       child: BlocBuilder<AppCubits, CubitStates>(
         builder: (context, state) {
@@ -70,7 +72,9 @@ class _DetailPageState extends State<DetailPage> {
                       children: [
                         //back button
                         IconButton(
-                          onPressed: () => onBackPressed,
+                          onPressed: () {
+                            onBackPressed();
+                          },
                           icon: const Icon(
                             Icons.chevron_left,
                             color: Colors.white,

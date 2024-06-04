@@ -34,8 +34,10 @@ class _HomeItemPageState extends State<HomeItemPage> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: false,
-      onPopInvoked: (bool isInvoked) => onBackPressed,
+      canPop: true,
+      onPopInvoked: (bool isInvoked) {
+        onBackPressed();
+      },
       child: Scaffold(
         body: BlocBuilder<AppCubits, CubitStates>(
           builder: (context, state) {
@@ -61,7 +63,9 @@ class _HomeItemPageState extends State<HomeItemPage> {
                           //menu icon
                           IconButton(
                             icon: const Icon(Icons.chevron_left, size: 30, color: Colors.black,),
-                            onPressed: () => onBackPressed,
+                            onPressed: () {
+                              onBackPressed();
+                            },
                           ),
 
                           //profile image (placeholder)

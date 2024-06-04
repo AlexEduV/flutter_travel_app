@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_travel_test/cubit/app_cubit_states.dart';
 import 'package:flutter_travel_test/cubit/app_cubits.dart';
@@ -10,7 +8,7 @@ import 'package:flutter_travel_test/widgets/app_text.dart';
 import 'package:flutter_travel_test/widgets/carousel_item.dart';
 import 'package:flutter_travel_test/widgets/explore_more_item.dart';
 
-import '../../model/data_model.dart';
+import 'package:flutter_travel_test/model/data_model.dart';
 
 class HomeItemPage extends StatefulWidget {
   const HomeItemPage({super.key});

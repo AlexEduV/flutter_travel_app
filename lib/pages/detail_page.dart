@@ -34,7 +34,6 @@ class _DetailPageState extends State<DetailPage> {
       onPopInvoked: (bool isInvoked) {
         onBackPressed();
       },
-      canPop: false,
       child: BlocBuilder<AppCubits, CubitStates>(
         builder: (context, state) {
 

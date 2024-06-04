@@ -34,7 +34,6 @@ class _HomeItemPageState extends State<HomeItemPage> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: true,
       onPopInvoked: (bool isInvoked) {
         onBackPressed();
       },

@@ -181,8 +181,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
     );
   }
 
-  Widget getTabPageByIndex(int index, List<DataModel> data)
-  {
+  Widget getTabPageByIndex(int index, List<DataModel> data) {
 
     if (index == 0) {
 
@@ -197,6 +196,8 @@ class _HomeItemPageState extends State<HomeItemPage> {
             },
             child: CarouselItem(
               imageSource: "http://mark.bslmeiyu.com/uploads/${data[index].imgSource}",
+              name: data[index].name,
+              location: data[index].location,
             ),
           );
         },

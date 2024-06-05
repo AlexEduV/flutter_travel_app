@@ -40,19 +40,17 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.white,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey.withOpacity(.5),
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
         elevation: 0,
         onTap: onBottomNavigationItemTap,
         currentIndex: _selectedIndex,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.apps),
-            label: "Home",
+            label: "Discover",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bar_chart_sharp),
-            label: "Bar",
+            label: "Statistics",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),

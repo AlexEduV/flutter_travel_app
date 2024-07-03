@@ -51,12 +51,12 @@ class _DetailPageState extends State<DetailPage> {
                   //background image
                   Positioned(
                       child: Container(
-                        height: 350,
+                        height: 400,
                         width: double.maxFinite,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: NetworkImage('http://mark.bslmeiyu.com/uploads/${place.imgSource}',),
-                            fit: BoxFit.fill,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       )

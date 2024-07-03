@@ -19,6 +19,7 @@ class CarouselItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Stack(
       children: [
 
@@ -26,9 +27,8 @@ class CarouselItem extends StatelessWidget {
         Container(
           height: 300,
           width: 200,
-          margin: const EdgeInsets.only(right: 10.0,),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.0),
             color: Colors.white,
             image: DecorationImage(
               image: NetworkImage(imageSource),
@@ -39,44 +39,61 @@ class CarouselItem extends StatelessWidget {
 
         //info column
         Positioned(
-          bottom: 10,
-          left: 10,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-              //name
-              AppLargeText(
-                text: name,
-                fontSize: 18,
-                color: Colors.white,
-              ),
-
-              const Gap(3.0),
-
-              //location
-              Row(
-                children: [
-
-                  //location icon
-                  const Icon(
-                    Icons.location_pin,
-                    color: Colors.white,
-                    size: 12,
-                  ),
-
-                  const Gap(5.0),
-
-                  //location text
-                  AppText(
-                    text: location,
-                    color: Colors.white,
-                    fontSize: 12,
-                  ),
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            padding: const EdgeInsets.only(left: 10, bottom: 10, right: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              gradient: const LinearGradient(
+                colors: [
+                  Colors.transparent,
+                  Colors.black,
                 ],
-              ),
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              )
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
 
-            ],
+                //name
+                AppLargeText(
+                  text: name,
+                  fontSize: 18,
+                  color: Colors.white,
+                  isShadowOn: true,
+                ),
+
+                const Gap(3.0),
+
+                //location
+                Row(
+                  children: [
+
+                    //location icon
+                    const Icon(
+                      Icons.location_pin,
+                      color: Colors.white,
+                      size: 12,
+                    ),
+
+                    const Gap(5.0),
+
+                    //location text
+                    AppText(
+                      text: location,
+                      color: Colors.white,
+                      fontSize: 12,
+                      isShadowOn: true,
+                    ),
+                  ],
+                ),
+
+              ],
+            ),
           ),
         ),
 

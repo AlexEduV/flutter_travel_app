@@ -9,6 +9,7 @@ import 'package:flutter_travel_test/widgets/carousel_item.dart';
 import 'package:flutter_travel_test/widgets/explore_more_item.dart';
 
 import 'package:flutter_travel_test/model/data_model.dart';
+import 'package:gap/gap.dart';
 
 class HomeItemPage extends StatefulWidget {
   const HomeItemPage({super.key});
@@ -187,7 +188,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
 
     if (index == 0) {
 
-      return ListView.builder(
+      return ListView.separated(
         itemCount: data.length,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
@@ -203,7 +204,11 @@ class _HomeItemPageState extends State<HomeItemPage> {
             ),
           );
         },
+        separatorBuilder: (context, index) {
+          return const Gap(10.0);
+        },
       );
+
     }
     else if (index == 1) {
       return const Text('Inspiration');

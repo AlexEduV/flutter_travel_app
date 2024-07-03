@@ -9,6 +9,7 @@ import 'package:flutter_travel_test/widgets/carousel_item.dart';
 import 'package:flutter_travel_test/widgets/explore_more_item.dart';
 
 import 'package:flutter_travel_test/model/data_model.dart';
+import 'package:flutter_travel_test/widgets/profile_icon.dart';
 import 'package:gap/gap.dart';
 
 class HomeItemPage extends StatefulWidget {
@@ -41,6 +42,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
       },
       canPop: false,
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: BlocBuilder<AppCubits, CubitStates>(
           builder: (context, state) {
 
@@ -48,17 +50,16 @@ class _HomeItemPageState extends State<HomeItemPage> {
 
               List<DataModel> info = state.places;
 
-              return Container(
-                padding: const EdgeInsets.only(top: 50,),
-                color: Colors.white,
-
+              return SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
+                    const Gap(50.0),
+
                     //top bar
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -72,17 +73,10 @@ class _HomeItemPageState extends State<HomeItemPage> {
                           ),
 
                           //profile image (placeholder)
-                          Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              image: const DecorationImage(
-                                image: AssetImage('assets/images/moon-profile.png'),
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.indigo,
-                            ),
+                          const ProfileIcon(
+                            assetSrc: 'assets/images/moon-profile.png',
                           ),
+
                         ],
                       ),
                     ),
@@ -90,15 +84,15 @@ class _HomeItemPageState extends State<HomeItemPage> {
                     const Gap(30.0),
 
                     //discover text
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: const AppLargeText(text: 'Discover'),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: AppLargeText(text: 'Discover'),
                     ),
 
                     const Gap(20.0),
 
                     //tab bar
-                    Container(
+                    Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: DefaultTabController(
                         length: 3,
@@ -135,9 +129,9 @@ class _HomeItemPageState extends State<HomeItemPage> {
                     ),
 
                     //Explore More section
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-                      child: const Row(
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           //explore more text
@@ -149,22 +143,22 @@ class _HomeItemPageState extends State<HomeItemPage> {
                       ),
                     ),
 
-                    //
+                    //Explore More items
                     Expanded(
-                      child: Container(
-                        margin: const EdgeInsets.only(left: 20),
-                        child: ListView.builder(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemCount: 4,
                           itemBuilder: (context, index) {
 
-                            return Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: exploreMoreItem(
-                                imageSource: 'assets/images/${exploreMoreItemsImages.keys.elementAt(index)}',
-                                label: exploreMoreItemsImages.values.elementAt(index),
-                              ),
+                            return exploreMoreItem(
+                              imageSource: 'assets/images/${exploreMoreItemsImages.keys.elementAt(index)}',
+                              label: exploreMoreItemsImages.values.elementAt(index),
                             );
+                          },
+                          separatorBuilder: (context, index) {
+                            return const Gap(20.0);
                           },
                         ),
                       ),

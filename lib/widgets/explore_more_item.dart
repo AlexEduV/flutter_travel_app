@@ -21,12 +21,12 @@ class ExploreMoreItem extends StatelessWidget {
 
         //image rounded tinted
         Container(
-          height: 60,
-          width: 60,
+          height: 70,
+          width: 70,
           decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(.5),
+            color: AppColors.buttonBackgroundColor,
             borderRadius: BorderRadius.circular(64.0),
-            image:DecorationImage(
+            image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
                 imageSource,

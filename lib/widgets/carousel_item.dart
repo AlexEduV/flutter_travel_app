@@ -45,7 +45,7 @@ class CarouselItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              //nmae
+              //name
               AppLargeText(
                 text: name,
                 fontSize: 18,
@@ -78,7 +78,7 @@ class CarouselItem extends StatelessWidget {
 
             ],
           ),
-        )
+        ),
 
       ],
     );

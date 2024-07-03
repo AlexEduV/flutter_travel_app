@@ -147,7 +147,6 @@ class _HomeItemPageState extends State<HomeItemPage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Wrap(
-                        direction: Axis.horizontal,
                         spacing: 20,
                         children: List.generate(4, (index) {
 

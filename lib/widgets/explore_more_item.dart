@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_travel_test/styles/colors.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
 
-class exploreMoreItem extends StatelessWidget {
+class ExploreMoreItem extends StatelessWidget {
 
   final String imageSource;
   final String label;
 
-  const exploreMoreItem({
+  const ExploreMoreItem({
     super.key,
     required this.imageSource,
     required this.label,
@@ -15,6 +15,7 @@ class exploreMoreItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: [
 

@@ -144,7 +144,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                     ),
 
                     //Explore More items
-                    Expanded(
+                    Flexible(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 20),
                         child: ListView.separated(
@@ -152,7 +152,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                           itemCount: 4,
                           itemBuilder: (context, index) {
 
-                            return exploreMoreItem(
+                            return ExploreMoreItem(
                               imageSource: 'assets/images/${exploreMoreItemsImages.keys.elementAt(index)}',
                               label: exploreMoreItemsImages.values.elementAt(index),
                             );

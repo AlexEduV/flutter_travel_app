@@ -144,24 +144,19 @@ class _HomeItemPageState extends State<HomeItemPage> {
                     ),
 
                     //Explore More items
-                    SizedBox(
-                      height: 89,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 4,
-                          itemBuilder: (context, index) {
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Wrap(
+                        direction: Axis.horizontal,
+                        spacing: 20,
+                        children: List.generate(4, (index) {
 
-                            return ExploreMoreItem(
-                              imageSource: 'assets/images/${exploreMoreItemsImages.keys.elementAt(index)}',
-                              label: exploreMoreItemsImages.values.elementAt(index),
-                            );
-                          },
-                          separatorBuilder: (context, index) {
-                            return const Gap(20.0);
-                          },
-                        ),
+                          return ExploreMoreItem(
+                            imageSource: 'assets/images/${exploreMoreItemsImages.keys.elementAt(index)}',
+                            label: exploreMoreItemsImages.values.elementAt(index),
+                          );
+
+                        }),
                       ),
                     ),
 

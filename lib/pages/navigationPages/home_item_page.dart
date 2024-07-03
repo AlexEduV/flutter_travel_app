@@ -151,7 +151,6 @@ class _HomeItemPageState extends State<HomeItemPage> {
                         child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemCount: 4,
-                          shrinkWrap: true,
                           itemBuilder: (context, index) {
 
                             return ExploreMoreItem(

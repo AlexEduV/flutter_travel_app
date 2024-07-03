@@ -34,6 +34,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return PopScope(
       onPopInvoked: (bool isInvoked) {
         onBackPressed();
@@ -61,6 +62,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+
                           //menu icon
                           IconButton(
                             icon: const Icon(Icons.chevron_left, size: 30, color: Colors.black,),
@@ -85,7 +87,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                       ),
                     ),
 
-                    const SizedBox(height: 30,),
+                    const Gap(30.0),
 
                     //discover text
                     Container(
@@ -93,7 +95,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                       child: const AppLargeText(text: 'Discover'),
                     ),
 
-                    const SizedBox(height: 20,),
+                    const Gap(20.0),
 
                     //tab bar
                     Container(
@@ -175,7 +177,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
               );
             }
             else {
-              return Container();
+              return const SizedBox.shrink();
             }
 
           },
@@ -217,7 +219,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
       return const Text('Emotions');
     }
 
-    return Container();
+    return const SizedBox.shrink();
   }
 }
 

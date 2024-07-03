@@ -58,7 +58,7 @@ class _HomeItemPageState extends State<HomeItemPage> {
                     const Gap(50.0),
 
                     //top bar
-                    Container(
+                    Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,12 +144,14 @@ class _HomeItemPageState extends State<HomeItemPage> {
                     ),
 
                     //Explore More items
-                    Flexible(
+                    SizedBox(
+                      height: 89,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 20),
                         child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemCount: 4,
+                          shrinkWrap: true,
                           itemBuilder: (context, index) {
 
                             return ExploreMoreItem(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_travel_test/styles/colors.dart';
+import 'package:flutter_travel_test/theme/colors.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
 
 class ExploreMoreItem extends StatelessWidget {

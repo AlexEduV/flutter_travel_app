@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_travel_test/cubit/app_cubits.dart';
-import 'package:flutter_travel_test/styles/colors.dart';
+import 'package:flutter_travel_test/theme/colors.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
 import 'package:flutter_travel_test/widgets/responsive_button.dart';

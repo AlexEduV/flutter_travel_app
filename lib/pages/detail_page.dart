@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_travel_test/cubit/app_cubits.dart';
-import 'package:flutter_travel_test/styles/colors.dart';
+import 'package:flutter_travel_test/theme/colors.dart';
 import 'package:flutter_travel_test/widgets/app_button.dart';
 import 'package:flutter_travel_test/widgets/app_large_text.dart';
 import 'package:flutter_travel_test/widgets/app_text.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_travel_test/widgets/responsive_button.dart';
 import 'package:gap/gap.dart';
 
 import 'package:flutter_travel_test/cubit/app_cubit_states.dart';
-import 'package:flutter_travel_test/model/data_model.dart';
+import 'package:flutter_travel_test/models/data_model.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});

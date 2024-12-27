@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:flutter_travel_test/model/data_model.dart';
+import 'package:flutter_travel_test/models/data_model.dart';
 
 abstract class CubitStates extends Equatable {
 

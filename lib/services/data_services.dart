@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
-import '../model/data_model.dart';
+import '../models/data_model.dart';
 
 class DataServices {
   String baseUri = 'http://mark.bslmeiyu.com/api';

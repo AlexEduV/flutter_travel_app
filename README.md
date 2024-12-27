@@ -1,16 +1,41 @@
-# flutter_travel_test
+# flutter_travel_app
 
-A Flutter Travel Mobile App.
+Discover the world with ease! The **Flutter Travel App** is your companion for exploring destinations, planning trips, and creating unforgettable travel experiences.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 **Features**
 
-A few resources to get you started if this is your first Flutter project:
+- Stunning UI Design
+- Cubit State Management
+- Rest API implementation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 **Screenshots**
+
+The [Screenshots](https://www.behance.net/gallery/200331395/Flutter-Travel-App) for the project can be found here.
+
+---
+
+## 🛠️ **Technologies Used**
+
+- **Frontend:** Flutter, Dart
+- **State Management:** Bloc, Cubit
+- **Backend Integration:** REST APIs
+- **Others:** Dio for HTTP requests
+
+---
+
+## 🏗️ **Architecture**
+
+The app follows **Component Oriented Design**, ensuring separation of concerns:
+1. **Cubit** State Management Logic.
+2. **Models** Data Models (domain layer).
+3. **Pages** Full Pages, built from components.
+4. **Services** Rest API logic.
+5. **Theme** Styling constants.
+6.  **Widgets:** UI components.
+
+---
+
